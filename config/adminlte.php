@@ -317,10 +317,9 @@ return [
         ],
 
         // Sidebar items:
-
         [
             'text' => 'Roles',
-            'icon' => 'far fa-fw fa-bookmark',
+            'icon' => 'fa fa-fw fa-bookmark',
             'submenu' => [
                 [
                     'text' => 'Listado de roles',
@@ -329,6 +328,20 @@ return [
                 [
                     'text' => 'Crear rol',
                     'url' => 'home/roles/create',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Usuarios',
+            'icon' => 'fa fa-fw fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Listado de usuarios',
+                    'url' => 'home/users',
+                ],
+                [
+                    'text' => 'Crear usuario',
+                    'url' => 'home/users/create',
                 ],
             ],
         ],

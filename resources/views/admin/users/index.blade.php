@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', config('app.name', 'Laravel').' | Roles - Listado de roles')
+@section('title', config('app.name', 'Laravel').' | Usuarios - Listado de usuarios')
 
 @section('page')
-    Listado de roles
+    Listado de usuarios
 @endsection
 
 @section('plugins.Datatables', true)
@@ -14,14 +14,18 @@
     @php
         $heads = [
             ['label' => 'Nro', 'no-export' => true, 'width' => 5],
-            'Nombre del rol',
+            'Nombre del usuario',
+            'Rol',
+            'Correo electrónico',
+            'Fecha de creación',
+            'Estado',
             ['label' => 'Acciones', 'no-export' => true, 'width' => 5],
         ];
 
         $config = [
             'data' => $data,
             'order' => [[1, 'asc']],
-            'columns' => [['className' => 'text-center'], null, ['orderable' => false]],
+            'columns' => [['className' => 'text-center'], null, null, null, null, null, ['orderable' => false]],
             'language' => ['url' => '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json'],
             'buttons' => [
                 [
@@ -52,22 +56,22 @@
         @csrf
     </form>
 
-    <x-adminlte-card title="Roles registrados" theme="primary" theme-mode="outline">
+    <x-adminlte-card title="Usuarios registrados" theme="primary" theme-mode="outline">
         <x-slot name="toolsSlot">
-            <a href="{{ route('roles.create') }}" class="btn btn-sm btn-success" title="Crear">
-                <i class="fa fa-sm fa-fw fa-plus"></i> Crear rol
+            <a href="{{ route('users.create') }}" class="btn btn-sm btn-success" title="Crear">
+                <i class="fa fa-sm fa-fw fa-plus"></i> Crear usuario
             </a>
         </x-slot>
-        <x-adminlte-datatable id="roles-table" :heads="$heads" :config="$config" bordered hoverable compressed with-buttons />
+        <x-adminlte-datatable id="users-table" :heads="$heads" :config="$config" bordered hoverable compressed with-buttons />
     </x-adminlte-card>
 @endsection
 
 @push('js')
     <script>
-        function answer(role, action) {
+        function answer(user, action) {
             Swal.fire({
-                title: 'Eliminar rol',
-                text: `¿Desea eliminar el rol '${role.name}'?`,
+                title: 'Eliminar usuario',
+                text: `¿Desea eliminar el usuario '${user.name}'?`,
                 icon: 'question',
                 showDenyButton: true,
                 confirmButtonText: 'Eliminar',

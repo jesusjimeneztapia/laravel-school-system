@@ -14,8 +14,16 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('state', 11);
+            $table->string('state', 11)->default('1');
             $table->timestamps();
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('role_id')
+                ->references('id')
+                ->on('roles')
+                ->onDelete('no action')
+                ->onUpdate('cascade');
         });
     }
 
