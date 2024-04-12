@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Role;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $roles = Role::all()->where('state', '1')->count();
+        $users = User::all()->where('state', '1')->count();
+        return view('home', compact('roles','users'));
     }
 }

@@ -11,7 +11,7 @@
         <x-adminlte-card class="col-6" title="Llene los campos" theme="success" theme-mode="outline">
             <form action="{{ route('roles.store') }}" method="post">
                 @csrf
-                <x-adminlte-input id="name" name="name" type="text" placeholder="Nombre del rol" autofocus/>
+                <x-adminlte-input id="name" name="name" type="text" placeholder="Nombre del rol" value="{{ old('name') }}" autofocus/>
                 <x-adminlte-button label="Crear" theme="success" type="submit"/>
                 <a href="{{ route('roles.index') }}" class="btn btn-secondary" type="button">Cancelar</a>
             </form>

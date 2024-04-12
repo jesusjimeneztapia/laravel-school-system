@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\role\RolePostRequest;
+use App\Http\Requests\role\RolePutRequest;
 use App\Models\Role;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
@@ -47,10 +48,9 @@ class RoleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(RolePostRequest $request)
     {
-        $name = trim($request->input('name'));
-        $name = mb_strtoupper($name, 'UTF-8');
+        $name = mb_strtoupper($request->input('name'), 'UTF-8');
         $role = new Role();
         $role->name = $name;
         $role->state = '1';
@@ -98,23 +98,22 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $role)
+    public function update(RolePutRequest $request, Role $role)
     {
-        $name = trim($request->input('name'));
-        $name = mb_strtoupper($name, 'UTF-8');
+        $name = mb_strtoupper($request->input('name'), 'UTF-8');
         $role->name = $name;
 
         try {
             $role->save();
             $request->session()->put(config('constants.TOASTR'), [
                 config('constants.TOASTR_MODE') => 'success',
-                config('constants.TOASTR_MESSAGE') => "El rol '$name' fue editado con éxito",
-                config('constants.TOASTR_TITLE') => 'Rol editado'
+                config('constants.TOASTR_MESSAGE') => "El rol '$name' fue actualizado con éxito",
+                config('constants.TOASTR_TITLE') => 'Rol actualizado'
             ]);
             return redirect()->route('roles.index');
         } catch (QueryException $e) {
             $message = 'Ocurrió algún error inesperado, intente más tarde';
-            $title = 'Error al editar el rol';
+            $title = 'Error al actualizar el rol';
             $mode = 'error';
             if ($e->getCode() == 23000) {
                 $message = "El rol '$name' ya existe";
