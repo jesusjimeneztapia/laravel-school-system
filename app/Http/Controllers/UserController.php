@@ -29,7 +29,7 @@ class UserController extends Controller
                     <i class="fa fa-lg fa-fw fa-pen"></i>
                 </a>';
             $btnDelete = "
-                <button class='btn btn-xs btn-default text-danger mx-1 shadow' title='Eliminar' onclick='answer($user, \"".route('users.destroy', $user)."\")'>
+                <button class='btn btn-xs btn-default text-danger mx-1 shadow' title='Eliminar' onclick='answer(\"$user->name\", \"".route('users.destroy', $user)."\")'>
                     <i class='fa fa-lg fa-fw fa-trash'></i>
                 </button>";
             setlocale(LC_TIME, 'es_ES.UTF-8');

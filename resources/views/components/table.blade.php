@@ -7,7 +7,7 @@
         'data' => $data,
         'order' => $order ?? [[1, 'asc']],
         'columns' => $columns ?? [],
-        'language' => ['url' => '//cdn.datatables.net/plug-ins/2.0.3/i18n/es-ES.json'],
+        'language' => ['url' => '//cdn.datatables.net/plug-ins/2.0.4/i18n/es-ES.json'],
         'buttons' => [
             [
                 'extend' => 'collection',
@@ -27,6 +27,10 @@
                         'extend' => 'print'
                     ]
                 ]
+            ],
+            [
+                'extend' => 'colvis',
+                'text' => 'Visor de columnas'
             ]
         ]
     ];

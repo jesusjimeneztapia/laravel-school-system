@@ -28,7 +28,7 @@ class RoleController extends Controller
                     <i class="fa fa-lg fa-fw fa-pen"></i>
                 </a>';
             $btnDelete = "
-                <button class='btn btn-xs btn-default text-danger mx-1 shadow' title='Eliminar' onclick='answer($role, \"".route('roles.destroy', $role)."\")'>
+                <button class='btn btn-xs btn-default text-danger mx-1 shadow' title='Eliminar' onclick='answer(\"$role->name\", \"".route('roles.destroy', $role)."\")'>
                     <i class='fa fa-lg fa-fw fa-trash'></i>
                 </button>";
 

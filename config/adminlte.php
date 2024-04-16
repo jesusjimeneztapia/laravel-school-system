@@ -515,6 +515,16 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
+                    'location' => 'vendor/datatables-plugins/fixedcolumns/js/fixedColumns.bootstrap4.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/fixedcolumns/js/dataTables.fixedColumns.min.js'
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
                     'location' => 'vendor/datatables-plugins/buttons/js/buttons.bootstrap4.min.js',
                 ],
                 [
@@ -526,6 +536,11 @@ return [
                     'type' => 'js',
                     'asset' => true,
                     'location' => 'vendor/datatables-plugins/buttons/js/buttons.print.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.colVis.min.js',
                 ],
                 [
                     'type' => 'js',
