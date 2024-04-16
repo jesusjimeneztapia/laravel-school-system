@@ -345,6 +345,30 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Configuraciones',
+            'icon' => 'fa fa-fw fa-wrench',
+            'submenu' => [
+                [
+                    'text' => 'Configurar',
+                    'url' => 'home/settings',
+                ],
+                [
+                    'text' => 'Instituciones',
+                    'icon' => 'fa fa-fw fa-school',
+                    'submenu' => [
+                        [
+                            'text' => 'Listado de instituciones',
+                            'url' => 'home/settings/institutions'
+                        ],
+                        [
+                            'text' => 'Crear institución',
+                            'url' => 'home/settings/institutions/create'
+                        ]
+                    ]
+                ]
+            ],
+        ],
 
         /*[
             'text' => 'blog',

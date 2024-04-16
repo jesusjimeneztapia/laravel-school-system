@@ -23,3 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('home/roles', \App\Http\Controllers\RoleController::class)->middleware('auth');
 Route::resource('home/users', \App\Http\Controllers\UserController::class)->middleware('auth');
+
+Route::resource('home/settings/institutions', \App\Http\Controllers\Settings\InstitutionController::class)
+    ->names('settings.institutions')->middleware('auth');
+Route::resource('home/settings', \App\Http\Controllers\SettingController::class)->middleware('auth');
