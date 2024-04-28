@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Level;
 use App\Models\Role;
 use App\Models\User;
 
@@ -26,6 +27,7 @@ class HomeController extends Controller
     {
         $roles = Role::all()->where('state', '1')->count();
         $users = User::all()->where('state', '1')->count();
-        return view('home', compact('roles','users'));
+        $levels = Level::all()->where('state', '1')->count();
+        return view('home', compact('roles','users', 'levels'));
     }
 }

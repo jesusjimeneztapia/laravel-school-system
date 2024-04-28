@@ -383,6 +383,20 @@ return [
                 ]
             ],
         ],
+        [
+            'text' => 'Niveles',
+            'icon' => 'fa fa-fw fa-chart-line',
+            'submenu' => [
+                [
+                    'text' => 'Listado de niveles',
+                    'url' => 'home/levels'
+                ],
+                [
+                    'text' => 'Crear nivel',
+                    'url' => 'home/levels/create'
+                ]
+            ]
+        ],
 
         /*[
             'text' => 'blog',
