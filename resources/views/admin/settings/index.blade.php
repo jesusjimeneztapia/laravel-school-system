@@ -16,5 +16,13 @@
                 theme="gradient-primary" icon-theme="light"
                 description="Listar, crear, ver, editar y eliminar instituciones"/>
         </div>
+        <div class="col-md-6 col-xl-3">
+            <x-adminlte-info-box
+                title="Gestiones"
+                url="{{ route('settings.institutions.index') }}"
+                icon="fa fa-lg fa-calendar text-info"
+                theme="gradient-info" icon-theme="light"
+                description="Listar, crear, ver, editar y eliminar gestiones"/>
+        </div>
     </div>
 @endsection

@@ -366,6 +366,20 @@ return [
                             'url' => 'home/settings/institutions/create'
                         ]
                     ]
+                ],
+                [
+                    'text' => 'Gestiones',
+                    'icon' => 'fa fa-fw fa-calendar',
+                    'submenu' => [
+                        [
+                            'text' => 'Listado de gestiones',
+                            'url' => 'home/settings/periods'
+                        ],
+                        [
+                            'text' => 'Crear gestión',
+                            'url' => 'home/settings/periods/create'
+                        ]
+                    ]
                 ]
             ],
         ],

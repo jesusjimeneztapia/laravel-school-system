@@ -28,5 +28,5 @@
 @endphp
 
 @section('main')
-    @include('components.table');
+    @include('components.table')
 @endsection
